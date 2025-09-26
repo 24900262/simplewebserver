@@ -1,5 +1,6 @@
 # EX01 Developing a Simple Webserver
-## Date:
+## Date: 20-08-2025
+
 ## Name: HARI PRASATH E
 ## REG NO: 25007799
 ## AIM:
@@ -7,7 +8,7 @@ To develop a simple webserver to serve html pages and display the Device Specifi
 
 ## DESIGN STEPS:
 ### Step 1: 
-HTML content creation.
+HTML content creation
 
 ### Step 2:
 Design of webserver workflow.
