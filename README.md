@@ -39,89 +39,69 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
 ```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio-Data - Hari</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #b7c53a;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #0066cc;
-        }
-        table {
-            width: 70%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            border: 3px double #e9e3e3;
-            background: #044f9f;
-        }
-        th, td {
-            border: 2px double #b3ccde;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background: #cac4e8;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Biodata</h1>
-    <table>
-        <tr>
-            <th colspan="2">Personal Information</th>
-        </tr>
-        <tr>
-            <td><strong>Name</strong></td>
-            <td>Hari Prasath E </td>
-        </tr>
-        <tr>
-            <td><strong>Role</strong></td>
-            <td>Student</td>
-        </tr>
-        <tr>
-            <td><strong>DOB</strong></td>
-            <td>01/11/2007</td>
-        </tr>
-        <tr>
-            <td><strong>Address</strong></td>
-            <td>Chennai</td>
-        </tr>
+from http.server import HTTPServer, BaseHTTPRequestHandler
+content = """
 
-        <tr>
-            <th colspan="2">Education</th>
-        </tr>
-        <tr>
-            <td><strong>College</strong></td>
-            <td>Saveetha Engineering College</td>
-        </tr>
-        <tr>
-            <td><strong>Course</strong></td>
-            <td>B.E COMPUTER SCIENCE ENGINEERING</td>
-        </tr>
-        <tr>
-            <td><strong>Year</strong></td>
-            <td>Pursuing 1st Year</td>
-        </tr>
-    </table>
-</body>
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <h1 align="center"> Device Specification-25007799 </h1>
+        <table border="4" align="center" >
+            <tr>
+                <th>S.NO.</th>
+                <th>device specification</th>
+                <th>details</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Lenovo LOQ</td>
+                <td>12 GB RAM , 512 GB SSD</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>acer</td>
+                <td>16 GB RAM ,512 GB SSD</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>HP</td>
+                <td>12 GB RAM,1 TB SDD</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>asus</td>
+                <td>8 GB RAM,512 GB SSD</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>lenovo thinkpad</td>
+                <td>12 GB RAM,512 GB SSD</td>
+            </tr>
+        </table>
+    </body>
 </html>
 
-
+"""
+class myhandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+server_address = ('',8000)
+httpd = HTTPServer(server_address,myhandler)
+print("my webserver is running...")
+httpd.serve_forever()
 
 ```
 
 ## OUTPUT:
-<img width="1908" height="993" alt="image" src="https://github.com/user-attachments/assets/df6e9583-bf33-40ed-8e3e-d7d21e9c8751" />
-<img width="1903" height="973" alt="image" src="https://github.com/user-attachments/assets/cba02670-1632-49b9-8dcc-f235b6b284da" />
+<img width="1907" height="1054" alt="Screenshot 2025-09-27 164527" src="https://github.com/user-attachments/assets/bb3efd84-8fd4-4ace-a738-92edf84734ff" />
+<img width="1870" height="1011" alt="Screenshot 2025-09-27 165205" src="https://github.com/user-attachments/assets/5473953c-92f5-4fdc-95b5-baa2513b0514" />
+
 
 
 
