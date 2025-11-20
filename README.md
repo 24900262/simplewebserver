@@ -1,8 +1,8 @@
 # EX01 Developing a Simple Webserver
 ## Date: 26-08-2025
 
-## Name: HARI PRASATH E
-## REG NO: 25007799
+## Name: Gayathri d
+## REG NO: 212224220028
 ## AIM:
 To develop a simple webserver to serve html pages and display the Device Specifications of your Laptop.
 
